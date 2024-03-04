@@ -41,7 +41,6 @@ export default function Specialties() {
         {services.map((service, index) => {
           return (
             <ServiceCard
-              gradientVariant={index + 1}
               key={service.title}
               title={service.title}
               icon={service.icon}
