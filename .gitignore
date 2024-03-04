@@ -13,6 +13,9 @@
 /.next/
 /out/
 
+# cms
+/sanity
+
 # production
 /build
 

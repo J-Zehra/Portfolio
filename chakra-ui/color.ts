@@ -1,9 +1,8 @@
 const colors = {
   palette: {
-    text: "#011128",
-    background: "#FAFCFF",
-    accent: "#035EDD",
-    light: "#E2E8EF",
+    text: "#04364A",
+    background: { primary: "#EBF2F1", secondary: "#DCEAE8" },
+    accent: "#3C8C87",
     button: {
       primary: "#02357E",
       secondary: "#AFD0FE",

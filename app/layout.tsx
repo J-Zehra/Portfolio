@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ChakraProvider } from "@chakra-ui/react";
 
-const inter = Inter({ subsets: ["latin"] });
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+import Header from "@/components/non-reusables/header/header";
+import ChakraProviderWrapper from "@/components/wrappers/chakraWrapper";
+import ProgressProviderWrapper from "@/components/wrappers/progressWrapper";
+import StateWrapper from "@/components/wrappers/stateWrapper";
+import QueryWrapper from "@/components/wrappers/queryWrapper";
+import ScrollObserver from "@/components/non-reusables/scrollObserver";
 
 export const metadata: Metadata = {
   title: "Jazen | Portfolio",
   description: "Portfolio Website",
-  icons: "/logo_symbol.png",
+  icons: "/logo_symbol.webp",
 };
 
 export default function RootLayout({
@@ -17,8 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ChakraProvider>{children}</ChakraProvider>
+      <body>
+        <ChakraProviderWrapper>
+          <ProgressProviderWrapper>
+            <QueryWrapper>
+              <StateWrapper>
+                <ScrollObserver>
+                  <Header />
+                  {children}
+                </ScrollObserver>
+              </StateWrapper>
+            </QueryWrapper>
+          </ProgressProviderWrapper>
+        </ChakraProviderWrapper>
       </body>
     </html>
   );
