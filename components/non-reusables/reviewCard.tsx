@@ -31,7 +31,7 @@ export default function ReviewCard({ review }: { review: Review }) {
       <CardFooter paddingBlock={0}>
         {[...Array(5)].map((_, index) => {
           return index + 1 <= review.rate ? (
-            <Box color="palette.accent" key={index}>
+            <Box color="palette.accent.primary.color" key={index}>
               <RiStarSFill />
             </Box>
           ) : (

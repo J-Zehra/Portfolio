@@ -12,11 +12,12 @@ const GithubLink = ({ link }: Props) => {
     <Link href={link || ""}>
       <Center
         p=".8rem"
-        fontSize="1.2rem"
-        bg="rgba(0, 100, 100, .1)"
+        fontSize="1.4rem"
+        bg="palette.background.primary.hover"
+        border="1px solid rgba(255, 255, 255, .05)"
         borderRadius="2rem"
         _hover={{
-          bg: "rgba(0, 100, 100, .2)",
+          bg: "palette.background.secondary.color",
         }}
         transition="all .3s ease"
       >

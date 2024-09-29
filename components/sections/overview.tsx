@@ -11,9 +11,10 @@ export default function Overview() {
   return (
     <Box
       p="2rem"
-      boxShadow="0px 10px 18px rgba(0, 100, 100, .02)"
-      bg="palette.background.primary"
-      borderBottomRadius="20rem"
+      marginTop="5rem"
+      zIndex={5}
+      // bg="palette.background.primary.hover"
+      color="palette.text.primary.color"
     >
       <Container
         as="section"
@@ -29,7 +30,7 @@ export default function Overview() {
                 variant="heading"
                 fontSize="4.5rem"
                 fontWeight="black"
-                color="palette.accent"
+                color="palette.accent.primary.color"
               >
                 {item.value}+
               </Text>

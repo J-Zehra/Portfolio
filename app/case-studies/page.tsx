@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
   return (
     <Box
       as="main"
-      paddingTop="6rem"
+      paddingTop="8rem"
       bg="palette.background.ssecondary"
       ref={ref}
     >
@@ -49,11 +49,11 @@ export default function CaseStudiesPage() {
       <Box
         bg="palette.background.primary"
         paddingBlock="8rem"
-        borderTopRadius="12rem"
+        borderTopRadius="5rem"
         marginTop="5rem"
       >
         <Container>
-          <Stack spacing="10rem">
+          <Stack spacing="18rem">
             {isLoading ? (
               <Loading />
             ) : (

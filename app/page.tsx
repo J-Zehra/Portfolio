@@ -22,6 +22,7 @@ import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
 import BackgroundElements from "@/components/non-reusables/backgroundElements";
 import UnderConstractionModal from "@/components/non-reusables/underConstractionModal";
+import Wave from "@/components/reusables/wave";
 
 export default function Home() {
   const { ref } = useObserver(NavLinks.home);
@@ -41,7 +42,7 @@ export default function Home() {
           w="100%"
           justifyContent="center"
           alignItems="center"
-          bg="#EBF2F1"
+          bg="palette.background.primary.color"
         >
           <Container
             as={Stack}
@@ -55,7 +56,7 @@ export default function Home() {
               <Socials />
               <Box>
                 <Text variant="heading">Selective Effort,</Text>
-                <Text color="palette.accent" variant="heading">
+                <Text color="palette.accent.primary.color" variant="heading">
                   Precise Execution.
                 </Text>
               </Box>
@@ -72,7 +73,11 @@ export default function Home() {
               >
                 <Button leftIcon={<FaLightbulb />}>Transform Ideas</Button>
                 <Link href="/case-studies">
-                  <Text textDecoration="underline" fontWeight="semibold">
+                  <Text
+                    textDecoration="underline"
+                    _hover={{ color: "palette.text.primary.hover" }}
+                    fontWeight="semibold"
+                  >
                     My works
                   </Text>
                 </Link>
@@ -82,17 +87,18 @@ export default function Home() {
               <Box
                 w="25rem"
                 h="25rem"
-                bg="palette.background.secondary"
+                bg="palette.background.secondary.color"
                 borderRadius="20rem"
               />
             </Center>
           </Container>
+          <Wave />
         </Flex>
-        <Overview />
         <BackgroundElements />
       </Box>
       <Specialties />
       <CaseStudies />
+      <Overview />
       <Testimonials />
       <Contact />
     </>

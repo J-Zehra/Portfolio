@@ -13,11 +13,22 @@ export default function Socials() {
   ];
 
   return (
-    <Stack direction="row" align="center" spacing="1rem">
+    <Stack direction="row" align="center" spacing=".5rem">
       {socials.map((social) => {
         return (
           <Link key={social.label} href={social.link}>
-            <Box color="palette.accent">{social.icon}</Box>
+            <Box
+              p=".5rem"
+              transition="all .3s ease"
+              borderRadius="2rem"
+              color="palette.accent.secondary.color"
+              _hover={{
+                bg: "palette.background.secondary.color",
+                color: "palette.accent.primary.color",
+              }}
+            >
+              {social.icon}
+            </Box>
           </Link>
         );
       })}

@@ -25,54 +25,57 @@ export default function ServiceCard({
   icon: ReactNode;
 }) {
   return (
-    <Tilt glareEnable glareColor="#508C88" tiltReverse glareReverse gyroscope>
-      <Card
-        cursor="default"
-        boxShadow="2px 5px 10px rgba(0, 100, 100, .05)"
-        width="20rem"
-        bg="palette.background.primary"
+    <Card
+      cursor="default"
+      boxShadow="2px 5px 10px rgba(0, 100, 100, .05)"
+      width="20rem"
+      bg="palette.background.primary.hover"
+      border="1px solid rgba(255, 255, 255, .1)"
+    >
+      <CardHeader
+        as={Stack}
+        spacing="1rem"
+        bg="palette.background.primary.color"
+        borderTopRadius=".5rem"
       >
-        <CardHeader
-          as={Stack}
-          spacing="1rem"
-          bg="#CDE3DF"
-          borderTopRadius=".5rem"
-        >
-          <Box fontSize="3rem" color="palette.accent">
-            {icon}
-          </Box>
-          <Stack direction="column">
-            <Text fontSize="1.3rem" opacity={0.8} fontWeight="bold">
-              {title}
-            </Text>
-            <Text
-              opacity={0.8}
-              color="palette.text"
-              fontStyle="oblique"
-              fontWeight="mediumed"
-            >
-              {subtitle}
-            </Text>
-          </Stack>
-        </CardHeader>
-        <CardBody paddingBlock={2}>
-          <Text opacity={0.9} lineHeight={6}>
-            {description}
+        <Box fontSize="3rem" color="palette.accent.primary.color">
+          {icon}
+        </Box>
+        <Stack direction="column">
+          <Text fontSize="1.3rem" opacity={0.8} fontWeight="bold">
+            {title}
           </Text>
-        </CardBody>
-        <CardFooter>
-          <Center gap="1rem">
-            <Link href="">
-              <Text color="palette.accent" fontWeight="semibold">
-                Learn more
-              </Text>
-            </Link>
-            <Box>
-              <IoIosArrowRoundForward />
-            </Box>
-          </Center>
-        </CardFooter>
-      </Card>
-    </Tilt>
+          <Text
+            opacity={0.8}
+            color="palette.text.primary.color"
+            fontStyle="oblique"
+            fontWeight="mediumed"
+          >
+            {subtitle}
+          </Text>
+        </Stack>
+      </CardHeader>
+      <CardBody paddingBlock={2}>
+        <Text opacity={0.9} lineHeight={6}>
+          {description}
+        </Text>
+      </CardBody>
+      <CardFooter>
+        <Center gap="1rem">
+          <Link href="">
+            <Text
+              color="palette.accent.primary.color"
+              _hover={{ color: "palette.accent.primary.hover" }}
+              fontWeight="semibold"
+            >
+              Learn more
+            </Text>
+          </Link>
+          <Box>
+            <IoIosArrowRoundForward />
+          </Box>
+        </Center>
+      </CardFooter>
+    </Card>
   );
 }

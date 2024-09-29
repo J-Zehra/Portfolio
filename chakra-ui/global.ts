@@ -5,8 +5,8 @@ const styles = {
       overflowX: "hidden",
     },
     body: {
-      bg: "palette.background.secondary",
-      color: "palette.text",
+      bg: "palette.background.secondary.color",
+      color: "palette.text.primary.color",
       WebkitTapHighlightColor: "transparent",
     },
     "::-webkit-scrollbar": {
@@ -19,7 +19,7 @@ const styles = {
       bg: "palette.accent",
     },
     "::-webkit-scrollbar-thumb:hover": {
-      bg: "#35827D",
+      bg: "palette.accent.primary.color",
     },
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../reusables/container";
-import { Text, Wrap } from "@chakra-ui/react";
+import { Wrap } from "@chakra-ui/react";
 import SectionHeader from "../reusables/sectionHeader";
 import ServiceCard from "../non-reusables/serviceCard";
 import { SiWebmoney } from "react-icons/si";
@@ -32,7 +32,7 @@ export default function Specialties() {
   ];
 
   return (
-    <Container as="section" marginBlock="6rem 8rem">
+    <Container as="section" marginBlock="8rem">
       <SectionHeader
         title="Specialties"
         description="Here are my specialties and the serivces I offer"

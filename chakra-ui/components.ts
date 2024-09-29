@@ -1,7 +1,7 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 
 export const CustomText = defineStyleConfig({
-  baseStyle: { fontSize: ".9rem", color: "palette.text" },
+  baseStyle: { fontSize: ".9rem", color: "palette.text.primary.color" },
   variants: {
     heading: {
       fontWeight: "extrabold",
@@ -27,10 +27,9 @@ export const CustomButton = defineStyleConfig({
       outline: "none",
       border: "none",
       p: " 1.5rem",
-      bg: "palette.accent",
-      color: "palette.background.primary",
-      _hover: { bg: "#2D7974" },
-      _active: { bg: "#256A65" },
+      bg: "palette.accent.primary.color",
+      color: "palette.background.primary.color",
+      _hover: { bg: "palette.accent.primary.hover" },
     },
   },
 });

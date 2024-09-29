@@ -24,17 +24,20 @@ export default function CaseStudies() {
     >
       <Container as={Flex} justifyContent="space-between" alignItems="center">
         <Stack flex={1}>
-          <Logo />
+          {/* <Logo /> */}
           <Text variant="heading">
-            <Highlight query="Projects" styles={{ color: "palette.accent" }}>
+            <Highlight
+              query="Projects"
+              styles={{ color: "palette.accent.primary.color" }}
+            >
               My Latest Projects
             </Highlight>
           </Text>
           <Text lineHeight={6}>
-            In over 2 years, I&apos;ve been building websites and web app as a
+            In over 3 years, I&apos;ve been building websites and web app as a
             school requirement, personal project, and ultimately for a client.
-            Here are some of the projects I&apos;ve worked on. See case studies for a
-            more detailed development process.
+            Here are some of the projects I&apos;ve worked on. See case studies
+            for a more detailed development process.
           </Text>
           <Center marginTop="1.2rem" w="fit-content">
             <Button leftIcon={<IoIosPaper />}>Case Studies</Button>

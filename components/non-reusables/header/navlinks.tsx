@@ -24,16 +24,13 @@ export default function Navlinks() {
       {links.map((nav) => {
         return (
           <Link key={nav.link} href={nav.link}>
-            <Center
-              transition="all .2s ease"
-              h={isScrolled ? "3rem" : "4rem"}
-              borderBottom={activeNav === nav.label ? "2px solid" : ""}
-              borderColor="palette.accent"
-            >
+            <Center transition="all .2s ease" h={isScrolled ? "3rem" : "4rem"}>
               <Text
-                color={activeNav === nav.label ? "palette.accent" : ""}
+                color={
+                  activeNav === nav.label ? "palette.accent.primary.color" : ""
+                }
                 fontWeight={activeNav === nav.label ? "medium" : "normal"}
-                _hover={{ color: "palette.accent" }}
+                _hover={{ color: "palette.accent.primary.color" }}
                 fontSize=".8rem"
               >
                 {nav.label}

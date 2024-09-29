@@ -14,11 +14,11 @@ export default function SectionHeader({
 }) {
   return (
     <Stack align="center">
-      <Logo />
+      {/* <Logo /> */}
       <Text variant="heading">
         <Highlight
           query={coloredText || ""}
-          styles={{ color: "palette.accent" }}
+          styles={{ color: "palette.accent.primary.color" }}
         >
           {title}
         </Highlight>

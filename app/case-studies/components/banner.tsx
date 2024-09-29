@@ -12,7 +12,7 @@ export default function Banner({ project }: Props) {
   return (
     <Stack
       p="2.5rem 3rem"
-      backgroundImage="linear-gradient(to bottom, #C8DEDC, rgba(0, 0, 0, 0))"
+      backgroundImage="linear-gradient(to bottom, #468A8A, transparent)"
       borderRadius=".5rem"
       spacing="1.5rem"
     >

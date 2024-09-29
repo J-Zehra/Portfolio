@@ -11,17 +11,17 @@ const WebsiteLink = ({ link }: Props) => {
   return (
     <Link href={link || ""}>
       <Center
-        bg="rgba(0, 100, 100, .1)"
+        bg="palette.background.primary.hover"
+        border="1px solid rgba(255, 255, 255, .05)"
         borderRadius="2rem"
         padding=".8rem"
         fontSize="1.4rem"
         _hover={{
-          bg: "rgba(0, 100, 100, .2)",
+          bg: "palette.background.secondary.color",
         }}
         transition="all .3s ease"
       >
-        <CiLink
-         />
+        <CiLink />
       </Center>
     </Link>
   );

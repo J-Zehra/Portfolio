@@ -10,7 +10,7 @@ export default function ProgressProviderWrapper({
   children: ReactNode;
 }) {
   const theme = useTheme();
-  const accentColor = theme.colors.palette.accent;
+  const accentColor = theme.colors.palette.accent.primary.color;
 
   return (
     <>

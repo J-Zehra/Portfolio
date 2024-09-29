@@ -8,8 +8,8 @@ export default function AboutPage() {
   const { ref } = useObserver(NavLinks.about);
 
   return (
-    <Grid h="100vh" ref={ref}>
-      About
+    <Grid h="100vh" placeContent="center" ref={ref}>
+      Under Constuction
     </Grid>
   );
 }

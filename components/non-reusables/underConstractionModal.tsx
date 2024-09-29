@@ -24,7 +24,7 @@ export default function UnderConstractionModal({ isOpen, onClose }: Props) {
       autoFocus={false}
     >
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent bg="palette.background.secondary.color">
         <ModalHeader>Notice!</ModalHeader>
         <ModalBody>
           <Text>
