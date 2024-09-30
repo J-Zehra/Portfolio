@@ -39,7 +39,8 @@ const PageLink = () => {
           >
             <Text
               w="fit-content"
-              color={viewState === link ? "palette.accent" : ""}
+              transition="all .3s ease"
+              color={viewState === link ? "palette.accent.primary.color" : ""}
               fontWeight={viewState === link ? "bold" : ""}
               _hover={{ color: "palette.accent" }}
             >
