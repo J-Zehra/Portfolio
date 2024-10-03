@@ -2,12 +2,15 @@ import {
   Button,
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type Props = {
   isOpen: boolean;
@@ -15,6 +18,13 @@ type Props = {
 };
 
 export default function UnderConstractionModal({ isOpen, onClose }: Props) {
+  const navigate = useRouter();
+
+  const handleClick = () => {
+    navigate.push("case-studies");
+    // close();
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -25,15 +35,18 @@ export default function UnderConstractionModal({ isOpen, onClose }: Props) {
     >
       <ModalOverlay />
       <ModalContent bg="palette.background.secondary.color">
+        <ModalCloseButton />
         <ModalHeader>Notice!</ModalHeader>
         <ModalBody>
           <Text>
-            Please note that my site is still under construction. Some pages
-            might not have a content yet.
+            Please note that my site is still under construction. But you can
+            checkout my works!
           </Text>
         </ModalBody>
         <ModalFooter>
-          <Button onClick={onClose}>Close</Button>
+          <Link href="case-studies">
+            <Button>See Case Studies</Button>
+          </Link>
         </ModalFooter>
       </ModalContent>
     </Modal>
