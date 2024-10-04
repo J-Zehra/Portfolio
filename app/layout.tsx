@@ -17,7 +17,7 @@ import ScrollObserver from "@/components/non-reusables/scrollObserver";
 export const metadata: Metadata = {
   title: "Jazen | Portfolio",
   description: "Portfolio Website",
-  icons: "/logo_symbol.webp",
+  icons: "/logo.png",
 };
 
 export default function RootLayout({

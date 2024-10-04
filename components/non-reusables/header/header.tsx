@@ -14,10 +14,11 @@ export default function Header() {
         as={Flex}
         borderRadius="2rem"
         paddingInline="2.5rem"
-        border="1px solid rgba(255, 255, 255, 0.05)"
         backdropFilter="blur(15px)"
         alignItems="center"
         bg="rgba(75, 75, 75, .1)"
+        border="1px solid rgba(255, 255, 255, .08)"
+        boxShadow="0px 0px 5px 1px rgba(255, 255, 255, .05) inset"
         justifyContent="space-between"
       >
         <Link href="/">

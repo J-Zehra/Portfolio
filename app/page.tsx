@@ -10,6 +10,7 @@ import {
   Button,
   Center,
   Flex,
+  Highlight,
   Stack,
   Text,
   useDisclosure,
@@ -31,9 +32,9 @@ export default function Home() {
 
   return (
     <>
-      {isOpen ? (
+      {/* {isOpen ? (
         <UnderConstractionModal isOpen={isOpen} onClose={onClose} />
-      ) : null}
+      ) : null} */}
       <Box pos="relative">
         <Flex
           as="main"
@@ -52,15 +53,17 @@ export default function Home() {
             alignItems="center"
             justifyContent="space-between"
           >
-            <Stack flex={1}>
-              <Socials />
-              <Box>
-                <Text variant="heading">Selective Effort,</Text>
-                <Text color="palette.accent.primary.color" variant="heading">
-                  Precise Execution.
-                </Text>
-              </Box>
-              <Text lineHeight={6}>
+            <Stack alignItems="center" flex={1}>
+              {/* <Socials /> */}
+              <Text variant="heading" fontSize="3.2rem" textAlign="center">
+                <Highlight
+                  styles={{ color: "palette.accent.primary.color" }}
+                  query={["Precise Execution."]}
+                >
+                  Selective Effort, Precise Execution.
+                </Highlight>
+              </Text>
+              <Text lineHeight={6} w="50%" textAlign="center">
                 Welcome to my digital domain, where creativity meets technical
                 mastery. Explore my portfolio and let&apos;s turn your digital
                 dreams into reality.
@@ -83,14 +86,6 @@ export default function Home() {
                 </Link>
               </Stack>
             </Stack>
-            <Center flex={1} justifyContent="end">
-              <Box
-                w="25rem"
-                h="25rem"
-                bg="palette.background.secondary.color"
-                borderRadius="20rem"
-              />
-            </Center>
           </Container>
           <Wave />
         </Flex>
