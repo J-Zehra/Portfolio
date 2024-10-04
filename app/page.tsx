@@ -1,7 +1,6 @@
 "use client";
 
 import Overview from "@/components/sections/overview";
-import Socials from "@/components/non-reusables/socials";
 import Container from "@/components/reusables/container";
 import useObserver from "@/hooks/useObserver";
 import { NavLinks } from "@/utils/enums";
@@ -54,7 +53,6 @@ export default function Home() {
             justifyContent="space-between"
           >
             <Stack alignItems="center" flex={1}>
-              {/* <Socials /> */}
               <Text variant="heading" fontSize="3.2rem" textAlign="center">
                 <Highlight
                   styles={{ color: "palette.accent.primary.color" }}
