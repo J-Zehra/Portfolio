@@ -31,9 +31,9 @@ export default function Home() {
 
   return (
     <>
-      {/* {isOpen ? (
+      {isOpen ? (
         <UnderConstractionModal isOpen={isOpen} onClose={onClose} />
-      ) : null} */}
+      ) : null}
       <Box pos="relative">
         <Flex
           as="main"
