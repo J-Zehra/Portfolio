@@ -23,6 +23,7 @@ import Contact from "@/components/sections/contact";
 import BackgroundElements from "@/components/non-reusables/backgroundElements";
 import UnderConstractionModal from "@/components/non-reusables/underConstractionModal";
 import Wave from "@/components/reusables/wave";
+import { Socials } from "@/components/non-reusables/socials";
 
 export default function Home() {
   const { ref } = useObserver(NavLinks.home);
@@ -44,6 +45,7 @@ export default function Home() {
           alignItems="center"
           bg="palette.background.primary.color"
         >
+          {/* <Socials ref={ref} /> */}
           <Container
             as={Stack}
             h="fit-content"
@@ -53,7 +55,13 @@ export default function Home() {
             justifyContent="space-between"
           >
             <Stack alignItems="center" flex={1}>
-              <Text variant="heading" fontSize="3.2rem" textAlign="center">
+              <Text
+                variant="heading"
+                pointerEvents="none"
+                fontSize="3.2rem"
+                textAlign="center"
+                userSelect="none"
+              >
                 <Highlight
                   styles={{ color: "palette.accent.primary.color" }}
                   query={["Precise Execution."]}
@@ -61,7 +69,13 @@ export default function Home() {
                   Selective Effort, Precise Execution.
                 </Highlight>
               </Text>
-              <Text lineHeight={6} w="50%" textAlign="center">
+              <Text
+                lineHeight={6}
+                w="50%"
+                textAlign="center"
+                userSelect="none"
+                pointerEvents="none"
+              >
                 Welcome to my digital domain, where creativity meets technical
                 mastery. Explore my portfolio and let&apos;s turn your digital
                 dreams into reality.
@@ -93,7 +107,7 @@ export default function Home() {
       <CaseStudies />
       <Overview />
       <Testimonials />
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 }

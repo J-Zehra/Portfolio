@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../reusables/container";
-import { Wrap } from "@chakra-ui/react";
+import { Box, Wrap } from "@chakra-ui/react";
 import SectionHeader from "../reusables/sectionHeader";
 import ServiceCard from "../non-reusables/serviceCard";
 import { SiWebmoney } from "react-icons/si";
@@ -12,21 +12,21 @@ export default function Specialties() {
       title: "Web Development",
       subtitle: "Forging Digital Experiences",
       description:
-        "From frontend design to backend development, I ensure your online presence stands out, delivering a seamless experience for your audience.",
+        "I ensure your online presence stands out, delivering a seamless experience for your audience.",
       icon: <SiWebmoney />,
     },
     {
       title: "UI/UX Design",
       subtitle: "Crafting Engaging User Experiences",
       description:
-        "I excel in creating intuitive and visually stunning interfaces. I craft designs that not only look great but also enhance user engagement and satisfaction",
+        "I craft designs that not only look great but also enhance user engagement and satisfaction",
       icon: <MdDesignServices />,
     },
     {
       title: "API Integration",
       subtitle: "Seamless Integration, Max Efficiency",
       description:
-        "Integrating systems and services to streamline your business operations. Connecting third-party applicationns and building custom API endpoints",
+        "Streamline your business operations. Connecting third-party applications and building custom API endpoints",
       icon: <MdIntegrationInstructions />,
     },
   ];
@@ -34,19 +34,24 @@ export default function Specialties() {
   return (
     <Container as="section" marginBlock="8rem">
       <SectionHeader
-        title="Specialties"
-        description="Here are my specialties and the serivces I offer"
+        title="What I do."
+        coloredText="What"
+        description="My specialties and the serivces I offer"
       />
       <Wrap w="100%" justify="space-between" marginTop="5rem">
         {services.map((service, index) => {
           return (
-            <ServiceCard
+            <Box
               key={service.title}
-              title={service.title}
-              icon={service.icon}
-              description={service.description}
-              subtitle={service.subtitle}
-            />
+              marginTop={index !== 0 ? `${7 * index}rem` : ""}
+            >
+              <ServiceCard
+                title={service.title}
+                icon={service.icon}
+                description={service.description}
+                subtitle={service.subtitle}
+              />
+            </Box>
           );
         })}
       </Wrap>

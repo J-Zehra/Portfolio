@@ -12,6 +12,7 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Tilt from "react-parallax-tilt";
+import CardWave1 from "../svg/cardWave1";
 
 export default function ServiceCard({
   title,
@@ -29,38 +30,37 @@ export default function ServiceCard({
       cursor="default"
       boxShadow="2px 5px 10px rgba(0, 100, 100, .05)"
       width="20rem"
-      bg="palette.background.primary.hover"
+      h="23rem"
+      borderRadius=".7rem"
+      bg="palette.background.primary.color"
       border="1px solid rgba(255, 255, 255, .1)"
     >
       <CardHeader
         as={Stack}
+        zIndex={1}
         spacing="1rem"
         bg="palette.background.primary.color"
-        borderTopRadius=".5rem"
+        borderTopRadius=".7rem"
       >
         <Box fontSize="3rem" color="palette.accent.primary.color">
           {icon}
         </Box>
         <Stack direction="column">
-          <Text fontSize="1.3rem" opacity={0.8} fontWeight="bold">
-            {title}
-          </Text>
           <Text
-            opacity={0.8}
-            color="palette.text.primary.color"
-            fontStyle="oblique"
-            fontWeight="mediumed"
+            fontSize="1.3rem"
+            color="palette.accent.primary.color"
+            fontWeight="bold"
           >
-            {subtitle}
+            {title}
           </Text>
         </Stack>
       </CardHeader>
-      <CardBody paddingBlock={2}>
+      <CardBody display="flex" alignItems="end" zIndex={1} paddingBlock={2}>
         <Text opacity={0.9} lineHeight={6}>
           {description}
         </Text>
       </CardBody>
-      <CardFooter>
+      <CardFooter zIndex={1}>
         <Center gap="1rem">
           <Link href="">
             <Text
@@ -76,6 +76,7 @@ export default function ServiceCard({
           </Box>
         </Center>
       </CardFooter>
+      <CardWave1 />
     </Card>
   );
 }

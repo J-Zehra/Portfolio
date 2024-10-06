@@ -13,7 +13,7 @@ export default function SectionHeader({
   description: string;
 }) {
   return (
-    <Stack align="center">
+    <Stack align="end">
       {/* <Logo /> */}
       <Text variant="heading">
         <Highlight
