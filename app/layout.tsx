@@ -15,9 +15,13 @@ import QueryWrapper from "@/components/wrappers/queryWrapper";
 import ScrollObserver from "@/components/non-reusables/scrollObserver";
 
 export const metadata: Metadata = {
-  title: "Jazen | Portfolio",
-  description: "Portfolio Website",
-  icons: "/logo.png",
+  title: "Jazen | Developer, Innovator, Tech Enthusiast",
+  description:
+    "Welcome to my digital domain where I share insights on web development, cutting-edge technology, and innovative projects. Dive into my world of creativity, code, and constant learning.",
+  icons: {
+    icon: "/logo.png",
+  },
+  themeColor: "#6FBFBF",
   metadataBase: new URL("https://jazenm.com/"),
 };
 
