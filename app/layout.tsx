@@ -18,10 +18,7 @@ export const metadata: Metadata = {
   title: "Jazen | Portfolio",
   description: "Portfolio Website",
   icons: "/logo.png",
-  metadataBase: new URL("https://jazenm.com"),
-  alternates: {
-    canonical: "./",
-  },
+  metadataBase: new URL("https://jazenm.com/"),
 };
 
 export default function RootLayout({
