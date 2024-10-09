@@ -2,14 +2,21 @@ import { Center } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { CiLink } from "react-icons/ci";
+import { useQuery } from "react-query";
+import { getCaseStudy } from "../lib/data";
 
 type Props = {
-  link?: string;
+  id: string;
 };
 
-const WebsiteLink = ({ link }: Props) => {
+const WebsiteLink = ({ id }: Props) => {
+  const { data: project, isLoading } = useQuery({
+    queryKey: ["project", id],
+    queryFn: () => getCaseStudy(id),
+  });
+
   return (
-    <Link href={link || ""}>
+    <Link href={project?.study.link || ""}>
       <Center
         bg="palette.background.primary.hover"
         border="1px solid rgba(255, 255, 255, .05)"

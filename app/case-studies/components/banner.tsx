@@ -1,14 +1,21 @@
-import { Divider, Stack, Text } from "@chakra-ui/react";
+import { Divider, Skeleton, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
-import { SiChakraui, SiNextdotjs, SiPrisma } from "react-icons/si";
+import { SiChakraui, SiMongodb, SiNextdotjs, SiPrisma } from "react-icons/si";
 import moment from "moment";
+import { useQuery } from "react-query";
+import { getCaseStudy } from "../lib/data";
 
-type Props = {
-  project?: Study;
-};
+export default function Banner({ id }: { id: string }) {
+  const { data: project, isLoading } = useQuery({
+    queryKey: ["project", id],
+    queryFn: () => getCaseStudy(id),
+  });
 
-export default function Banner({ project }: Props) {
+  if (isLoading) {
+    return <Skeleton opacity={0.05} w="100%" h="15rem" borderRadius=".5rem" />;
+  }
+
   return (
     <Stack
       p="2.5rem 3rem"
@@ -19,7 +26,7 @@ export default function Banner({ project }: Props) {
       <Stack direction="row" w="100%" justify="space-between" align="start">
         <Stack direction="row">
           <Text variant="subheading" fontSize="2.5rem">
-            {project?.name}
+            {project?.study?.name}
           </Text>
           <Text
             fontSize="1.2rem"
@@ -30,7 +37,7 @@ export default function Banner({ project }: Props) {
             Case Study
           </Text>
         </Stack>
-        <Link href={project?.link || ""} target="_blank">
+        <Link href={project?.study?.link || ""} target="_blank">
           <Text
             textDecoration="underline"
             transition="all .3s ease"
@@ -49,8 +56,8 @@ export default function Banner({ project }: Props) {
             <Text>End Date:</Text>
           </Stack>
           <Stack fontWeight="medium" opacity={0.9} fontSize=".8rem">
-            <Text>{moment(project?.startDate).format("LL")}</Text>
-            <Text>{moment(project?.endDate).format("LL")}</Text>
+            <Text>{moment(project?.study?.startDate).format("LL")}</Text>
+            <Text>{moment(project?.study?.endDate).format("LL")}</Text>
           </Stack>
         </Stack>
         <Stack spacing="1rem">
@@ -61,9 +68,7 @@ export default function Banner({ project }: Props) {
             <SiNextdotjs />
             <SiChakraui />
             <SiPrisma />
-            <SiNextdotjs />
-            <SiChakraui />
-            <SiPrisma />
+            <SiMongodb />
           </Stack>
         </Stack>
       </Stack>

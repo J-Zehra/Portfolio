@@ -2,14 +2,21 @@ import { Center } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+import { useQuery } from "react-query";
+import { getCaseStudy } from "../lib/data";
 
 type Props = {
-  link?: string;
+  id: string;
 };
 
-const GithubLink = ({ link }: Props) => {
+const GithubLink = ({ id }: Props) => {
+  const { data: project, isLoading } = useQuery({
+    queryKey: ["project", id],
+    queryFn: () => getCaseStudy(id),
+  });
+
   return (
-    <Link href={link || ""}>
+    <Link href={project?.study.link || ""}>
       <Center
         p=".8rem"
         fontSize="1.4rem"

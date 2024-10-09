@@ -1,9 +1,14 @@
 "use client";
 
 import Container from "@/components/reusables/container";
-import { client } from "@/sanity-client/client";
-import { Box, Divider, Stack, Text } from "@chakra-ui/react";
-import { useParams } from "next/navigation";
+import {
+  Box,
+  Divider,
+  Skeleton,
+  SkeletonText,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useQuery } from "react-query";
 import { PortableText } from "@portabletext/react";
@@ -14,26 +19,14 @@ import { sectionViewState } from "@/state/sectionViewState";
 import { useSetRecoilState } from "recoil";
 import GithubLink from "../components/githubLink";
 import WebsiteLink from "../components/websiteLink";
+import { getCaseStudy } from "../lib/data";
 
-export default function CaseStudy() {
-  const { id } = useParams();
+export default function CaseStudy({ params }: { params: { id: string } }) {
   const setViewState = useSetRecoilState(sectionViewState);
 
   const { data: project, isLoading } = useQuery({
-    queryKey: ["project", id],
-    queryFn: async () => {
-      const res = await client.fetch<Project[]>(
-        `*[_id == "${id}"] {
-           study->,
-           name,
-           link,
-           startDate, 
-           endDate
-        }`
-      );
-
-      return res[0];
-    },
+    queryKey: ["project", params.id],
+    queryFn: () => getCaseStudy(params.id),
   });
 
   useEffect(() => {
@@ -66,7 +59,7 @@ export default function CaseStudy() {
   return (
     <Box as="main" paddingBlock="8rem">
       <Container>
-        <Banner project={project?.study} />
+        <Banner id={params.id} />
         <Stack
           w="100%"
           direction="row"
@@ -81,7 +74,17 @@ export default function CaseStudy() {
                 value={project!.study.study}
                 components={customPortableTextComponent}
               />
-            ) : null}
+            ) : (
+              <Stack spacing="3rem">
+                <Skeleton
+                  opacity={0.05}
+                  w="8rem"
+                  h="2rem"
+                  borderRadius=".3rem"
+                />
+                <SkeletonText w="100%" noOfLines={6} opacity={0.05} />
+              </Stack>
+            )}
           </Stack>
           <Stack
             flex={1}
@@ -94,8 +97,8 @@ export default function CaseStudy() {
             <PageLink />
             <Divider w="5rem" borderColor="rgba(0, 100, 100, .3)" />
             <Stack direction="row" align="center">
-              <GithubLink link={project?.study.githubLink} />
-              <WebsiteLink link={project?.link} />
+              <GithubLink id={params.id} />
+              <WebsiteLink id={params.id} />
             </Stack>
           </Stack>
         </Stack>

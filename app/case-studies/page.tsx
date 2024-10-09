@@ -3,32 +3,19 @@
 import Container from "@/components/reusables/container";
 import SectionHeader from "@/components/reusables/sectionHeader";
 import useObserver from "@/hooks/useObserver";
-import { client } from "@/sanity-client/client";
 import { NavLinks } from "@/utils/enums";
 import { Box, Center, Stack } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import Loading from "./components/loading";
 import ProjectItem from "./components/projectItem/projectItem";
+import { getCaseStudies } from "./lib/data";
 
 export default function CaseStudiesPage() {
   const { ref } = useObserver(NavLinks.caseStudies);
 
   const { data: projects, isLoading } = useQuery({
     queryKey: ["projects"],
-    queryFn: () => {
-      return client.fetch<Project[]>(
-        `*[_type == "project"] | order(_createdAt asc) { 
-          _id, 
-          "mainImageUrl": mainImage.asset->url, 
-          "subImageUrl": subImage.asset->url, 
-          "logoUrl": logo.asset->url, 
-          title, 
-          subtitle, 
-          description, 
-          link,
-        }`
-      );
-    },
+    queryFn: getCaseStudies,
   });
 
   return (
