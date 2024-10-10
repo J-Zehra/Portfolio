@@ -26,5 +26,7 @@ export async function getCaseStudy(id: string) {
     }`
   );
 
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return data;
 }

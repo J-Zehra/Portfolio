@@ -9,10 +9,9 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useQuery } from "react-query";
 import { PortableText } from "@portabletext/react";
-import Banner from "../components/banner";
 import { customPortableTextComponent } from "../components/customPortableTextComponent";
 import PageLink from "../components/pageLink.";
 import { sectionViewState } from "@/state/sectionViewState";
@@ -20,6 +19,7 @@ import { useSetRecoilState } from "recoil";
 import GithubLink from "../components/githubLink";
 import WebsiteLink from "../components/websiteLink";
 import { getCaseStudy } from "../lib/data";
+import Banner from "../components/banner";
 
 export default function CaseStudy({ params }: { params: { id: string } }) {
   const setViewState = useSetRecoilState(sectionViewState);

@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo.png",
   },
-  themeColor: "#6FBFBF",
   metadataBase: new URL("https://jazenm.com/"),
 };
 
